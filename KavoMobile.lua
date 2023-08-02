@@ -321,8 +321,7 @@ function Kavo.CreateLib(kavName, themeList)
     infoContainer.ClipsDescendants = true
     infoContainer.Position = UDim2.new(0.299047619, 0, 0.874213815, 0)
     infoContainer.Size = UDim2.new(0, 368, 0, 33)
-    game.CoreGui[LibName].Name = KAVOUIMOBLIE	
-    
+	
     coroutine.wrap(function()
         while wait() do
             Main.BackgroundColor3 = themeList.Background
