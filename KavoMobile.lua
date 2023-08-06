@@ -10,8 +10,7 @@ local Objects = {}
 function Kavo:DraggingEnabled(frame, parent)
         
     parent = parent or frame
-    
-    -- stolen from wally or kiriot, kek
+	
     local dragging = false
     local dragInput, mousePos, framePos
 
@@ -47,7 +46,6 @@ function Utility:TweenObject(obj, properties, duration, ...)
     tween:Create(obj, tweeninfo(duration, ...), properties):Play()
 end
 
-
 local themes = {
     SchemeColor = Color3.fromRGB(74, 99, 135),
     Background = Color3.fromRGB(36, 37, 43),
@@ -72,13 +70,6 @@ local themeStyles = {
     },
     BloodTheme = {
         SchemeColor = Color3.fromRGB(227, 27, 27),
-        Background = Color3.fromRGB(10, 10, 10),
-        Header = Color3.fromRGB(5, 5, 5),
-        TextColor = Color3.fromRGB(255,255,255),
-        ElementColor = Color3.fromRGB(20, 20, 20)
-    },
-    BlueTheme = {
-        SchemeColor = Color3.fromRGB(27, 27, 227),
         Background = Color3.fromRGB(10, 10, 10),
         Header = Color3.fromRGB(5, 5, 5),
         TextColor = Color3.fromRGB(255,255,255),
@@ -165,8 +156,6 @@ function Kavo.CreateLib(kavName, themeList)
     elseif themeList == "LightTheme" then
         themeList = themeStyles.LightTheme
     elseif themeList == "BloodTheme" then
-        themeList = themeStyles.BloodTheme
-    elseif themeList == "BlueTheme" then
         themeList = themeStyles.BloodTheme
     elseif themeList == "GrapeTheme" then
         themeList = themeStyles.GrapeTheme
@@ -870,7 +859,6 @@ function Kavo.CreateLib(kavName, themeList)
                 UICorner.CornerRadius = UDim.new(0, 4)
                 UICorner.Parent = moreInfo
 
-
                 updateSectionFrame()
                                 UpdateSize()
             
@@ -1345,7 +1333,6 @@ function Kavo.CreateLib(kavName, themeList)
                     Utility:TweenObject(moreInfo, {TextColor3 = Color3.fromRGB(255,255,255)}, 0.2)
                 end 
 
-
                                 updateSectionFrame()
                 UpdateSize()
                 local mouse = game:GetService("Players").LocalPlayer:GetMouse();
@@ -1461,7 +1448,6 @@ function Kavo.CreateLib(kavName, themeList)
 
                 local opened = false
                 local DropYSize = 33
-
 
                 local dropFrame = Instance.new("Frame")
                 local dropOpen = Instance.new("TextButton")
@@ -2143,7 +2129,6 @@ function Kavo.CreateLib(kavName, themeList)
                 local onrainbow = Instance.new("TextButton")
                 local togName_2 = Instance.new("TextLabel")
 
-                --Properties:
                 local Sample = Instance.new("ImageLabel")
                 Sample.Name = "Sample"
                 Sample.Parent = colorHeader
@@ -2223,6 +2208,7 @@ function Kavo.CreateLib(kavName, themeList)
                         Utility:TweenObject(blurFrame, {BackgroundTransparency = 1}, 0.2)
                     end
                 end)
+				
                 UICorner.CornerRadius = UDim.new(0, 4)
                 UICorner.Parent = colorElement
 
@@ -2488,7 +2474,6 @@ function Kavo.CreateLib(kavName, themeList)
                 local rainbow = false
                 local rainbowconnection
                 local counter = 0
-                --
                 local function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
                 counter = 0
                 local function mouseLocation()
@@ -2568,7 +2553,6 @@ function Kavo.CreateLib(kavName, themeList)
                 end
 
                 onrainbow.MouseButton1Click:Connect(togglerainbow)
-                --
                 mouse.Move:connect(cp)
                 rgb.MouseButton1Down:connect(function()colorpicker=true end)
                 dark.MouseButton1Down:connect(function()darknesss=true end)
@@ -2589,16 +2573,16 @@ function Kavo.CreateLib(kavName, themeList)
             	label.Parent = sectionInners
             	label.BackgroundColor3 = themeList.SchemeColor
             	label.BorderSizePixel = 0
-				label.ClipsDescendants = true
+		label.ClipsDescendants = true
             	label.Text = title
                 label.Size = UDim2.new(0, 352, 0, 33)
-	            label.Font = Enum.Font.Gotham
-	            label.Text = "  "..title
-	            label.RichText = true
-	            label.TextColor3 = themeList.TextColor
-	            Objects[label] = "TextColor3"
-	            label.TextSize = 14.000
-	            label.TextXAlignment = Enum.TextXAlignment.Left
+	        label.Font = Enum.Font.Gotham
+	        label.Text = "  "..title
+	        label.RichText = true
+	        label.TextColor3 = themeList.TextColor
+	        Objects[label] = "TextColor3"
+	        label.TextSize = 14.000
+	        label.TextXAlignment = Enum.TextXAlignment.Left
 	            
 	           	UICorner.CornerRadius = UDim.new(0, 4)
                 UICorner.Parent = label
